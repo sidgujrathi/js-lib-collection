@@ -1,0 +1,33 @@
+{
+  "name": "js-lib-collection",
+  "version": "1.0.0",
+  "description": "These various collection of reusable libraries provide pre-written JavaScript code which makes common or complex tasks easy to do.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sidgujrathi/js-lib-collection.git"
+  },
+  "keywords": [
+    "library",
+    "lib",
+    "js",
+    "collection"
+  ],
+  "author": "Siddharth Gujrathi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sidgujrathi/js-lib-collection/issues"
+  },
+  "homepage": "https://github.com/sidgujrathi/js-lib-collection#readme",
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
+  }
+}
