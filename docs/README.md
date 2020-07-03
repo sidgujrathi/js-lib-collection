@@ -20,6 +20,23 @@ storage functions</p>
 <dt><a href="#AWSESLib">AWSESLib</a></dt>
 <dd><p>This is helper/lib class to return AWS ES client and ES configuration required</p>
 </dd>
+<dt><a href="#EmailNotification">EmailNotification</a></dt>
+<dd><p>This is helper/lib class to send email notifications</p>
+</dd>
+</dl>
+
+## Typedefs
+
+<dl>
+<dt><a href="#MailOptions">MailOptions</a> : <code>Object</code></dt>
+<dd><p>Send email optoins</p>
+</dd>
+<dt><a href="#MailResponse">MailResponse</a> : <code>Object</code></dt>
+<dd><p>Send mail response</p>
+</dd>
+<dt><a href="#MailConfig">MailConfig</a> : <code>Object</code></dt>
+<dd><p>Get Email configuration request options</p>
+</dd>
 </dl>
 
 <a name="module_Auth.lib"></a>
@@ -138,3 +155,97 @@ Assign all ENV variable to `this`, to be used in member functionsAlso will init
 Creates ES client
 
 **Kind**: instance method of [<code>AWSESLib</code>](#AWSESLib)  
+<a name="EmailNotification"></a>
+
+## EmailNotification
+This is helper/lib class to send email notifications
+
+**Kind**: global class  
+
+* [EmailNotification](#EmailNotification)
+    * [.sendEmail(options)](#EmailNotification+sendEmail) ⇒ [<code>Promise.&lt;MailResponse&gt;</code>](#MailResponse)
+    * [.getTemplate(templateName, options)](#EmailNotification+getTemplate) ⇒ <code>Promise.&lt;string&gt;</code>
+    * [.getEmailServer(mailConfig)](#EmailNotification+getEmailServer) ⇒ <code>Promise</code>
+
+<a name="EmailNotification+sendEmail"></a>
+
+### emailNotification.sendEmail(options) ⇒ [<code>Promise.&lt;MailResponse&gt;</code>](#MailResponse)
+Sends email with given optoins as template orsimple text email
+
+**Kind**: instance method of [<code>EmailNotification</code>](#EmailNotification)  
+**Returns**: [<code>Promise.&lt;MailResponse&gt;</code>](#MailResponse) - - Promise with Mail response  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | [<code>MailOptions</code>](#MailOptions) | Email optoins |
+
+<a name="EmailNotification+getTemplate"></a>
+
+### emailNotification.getTemplate(templateName, options) ⇒ <code>Promise.&lt;string&gt;</code>
+Gets tempalte from project template folder
+
+**Kind**: instance method of [<code>EmailNotification</code>](#EmailNotification)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| templateName | <code>String</code> |  |
+| options | <code>Object</code> | Object containing keys and values to e used with pug template |
+
+<a name="EmailNotification+getEmailServer"></a>
+
+### emailNotification.getEmailServer(mailConfig) ⇒ <code>Promise</code>
+Gets email server instance with provided options
+
+**Kind**: instance method of [<code>EmailNotification</code>](#EmailNotification)  
+**Returns**: <code>Promise</code> - Mail  
+
+| Param | Type |
+| --- | --- |
+| mailConfig | [<code>MailConfig</code>](#MailConfig) | 
+
+<a name="MailOptions"></a>
+
+## MailOptions : <code>Object</code>
+Send email optoins
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| options.subject | <code>String</code> | Email subject |
+| optoins.templateName | <code>String</code> | Pug template name you have in project |
+| options.body | <code>String</code> | Email body |
+| options.htmlBody | <code>String</code> | HTMl email body |
+| optoins.replace | <code>Object</code> | Object containing keys and values to e used with pug template |
+| options.to | <code>String</code> | Recipient email address seperated with commas |
+
+<a name="MailResponse"></a>
+
+## MailResponse : <code>Object</code>
+Send mail response
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| success | <code>Boolean</code> |  |
+| message | <code>String</code> | Whatever message you want to send back |
+| item | <code>Object</code> | Response got from nodemailer |
+| error | <code>Object</code> | Error from nodemailer |
+
+<a name="MailConfig"></a>
+
+## MailConfig : <code>Object</code>
+Get Email configuration request options
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| mailOption | <code>Object</code> |  |
+| mailOption.fromEmail | <code>String</code> | From email address concat with commas |
+| mailOption.toEmail | <code>String</code> | To email address concat with commas |
+
