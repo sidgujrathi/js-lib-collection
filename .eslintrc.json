@@ -15,6 +15,7 @@
         "no-extra-semi": "off",
         "no-console": "off",
         "class-methods-use-this": "off",
+        "import/no-unresolved": "off", //This is just because this is just collection
         "max-len": [
             "error",
             {

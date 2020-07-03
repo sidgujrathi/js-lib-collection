@@ -12,6 +12,9 @@ storage functions</p>
 <dt><a href="#module_Map.lib">Map.lib</a></dt>
 <dd><p>Map Library: Colletction of generic map functions</p>
 </dd>
+<dt><a href="#module_Redis.lib">Redis.lib</a></dt>
+<dd><p>Redis Library: Collection of methods related to redis</p>
+</dd>
 </dl>
 
 ## Classes
@@ -135,6 +138,18 @@ Converts degree to Radian
 | --- | --- |
 | deg | <code>Number</code> | 
 
+<a name="module_Redis.lib"></a>
+
+## Redis.lib
+Redis Library: Collection of methods related to redis
+
+<a name="module_Redis.lib..getRedisClient"></a>
+
+### Redis.lib~getRedisClient() ⇒ <code>Object</code>
+Connects to redis and returs client
+
+**Kind**: inner method of [<code>Redis.lib</code>](#module_Redis.lib)  
+**Returns**: <code>Object</code> - client  
 <a name="AWSESLib"></a>
 
 ## AWSESLib
