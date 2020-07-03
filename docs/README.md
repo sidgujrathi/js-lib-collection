@@ -5,6 +5,9 @@
 <dd><p>Auth Library: Colletction of generic authentication and
 autorization functions</p>
 </dd>
+<dt><a href="#module_Env.lib">Env.lib</a></dt>
+<dd><p>ENV Library: Colletction of generic enviroment manipulation functions</p>
+</dd>
 <dt><a href="#module_GCPStorage.lib.js">GCPStorage.lib.js</a></dt>
 <dd><p>GCP Storage Library: Colletction of generic gcp
 storage functions</p>
@@ -84,6 +87,37 @@ Validates provided token
 | --- | --- | --- |
 | token | <code>String</code> | JWT to check |
 
+<a name="module_Env.lib"></a>
+
+## Env.lib
+ENV Library: Colletction of generic enviroment manipulation functions
+
+
+* [Env.lib](#module_Env.lib)
+    * [~checkDotEnv()](#module_Env.lib..checkDotEnv)
+    * [~getJWTEnv()](#module_Env.lib..getJWTEnv) ⇒ <code>Object</code>
+    * [~getRedisEnv()](#module_Env.lib..getRedisEnv) ⇒ <code>Object</code>
+
+<a name="module_Env.lib..checkDotEnv"></a>
+
+### Env.lib~checkDotEnv()
+Check if .env is present
+
+**Kind**: inner method of [<code>Env.lib</code>](#module_Env.lib)  
+<a name="module_Env.lib..getJWTEnv"></a>
+
+### Env.lib~getJWTEnv() ⇒ <code>Object</code>
+Get JWT varaibles to encode & decode token
+
+**Kind**: inner method of [<code>Env.lib</code>](#module_Env.lib)  
+**Returns**: <code>Object</code> - JWT  
+<a name="module_Env.lib..getRedisEnv"></a>
+
+### Env.lib~getRedisEnv() ⇒ <code>Object</code>
+Get Redis env variables
+
+**Kind**: inner method of [<code>Env.lib</code>](#module_Env.lib)  
+**Returns**: <code>Object</code> - REDIS  
 <a name="module_GCPStorage.lib.js"></a>
 
 ## GCPStorage.lib.js
