@@ -25,6 +25,9 @@
     "url": "https://github.com/sidgujrathi/js-lib-collection/issues"
   },
   "homepage": "https://github.com/sidgujrathi/js-lib-collection#readme",
+  "dependencies": {
+    "jsdoc-to-markdown": "^6.0.1"
+  },
   "devDependencies": {
     "eslint": "^7.3.1",
     "eslint-config-airbnb-base": "^14.2.0",
