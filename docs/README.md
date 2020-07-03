@@ -23,6 +23,10 @@ storage functions</p>
 <dt><a href="#EmailNotification">EmailNotification</a></dt>
 <dd><p>This is helper/lib class to send email notifications</p>
 </dd>
+<dt><a href="#S3Wrapper">S3Wrapper</a></dt>
+<dd><p>This is wrapper class to s3 API functions with
+promisification &amp; custom response handling</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -36,6 +40,9 @@ storage functions</p>
 </dd>
 <dt><a href="#MailConfig">MailConfig</a> : <code>Object</code></dt>
 <dd><p>Get Email configuration request options</p>
+</dd>
+<dt><a href="#S3HelperResponse">S3HelperResponse</a> : <code>Object</code></dt>
+<dd><p>S3 Wrapper Response</p>
 </dd>
 </dl>
 
@@ -203,6 +210,145 @@ Gets email server instance with provided options
 | --- | --- |
 | mailConfig | [<code>MailConfig</code>](#MailConfig) | 
 
+<a name="S3Wrapper"></a>
+
+## S3Wrapper
+This is wrapper class to s3 API functions withpromisification & custom response handling
+
+**Kind**: global class  
+
+* [S3Wrapper](#S3Wrapper)
+    * [.getBuckets()](#S3Wrapper+getBuckets) ⇒ [<code>Promise.&lt;S3HelperResponse&gt;</code>](#S3HelperResponse)
+    * [.addBucket(bucketName, ACL)](#S3Wrapper+addBucket) ⇒ [<code>Promise.&lt;S3HelperResponse&gt;</code>](#S3HelperResponse)
+    * [.deleteBucket(bucketName)](#S3Wrapper+deleteBucket) ⇒ [<code>Promise.&lt;S3HelperResponse&gt;</code>](#S3HelperResponse)
+    * [.uploadMulterS3(req, res, fieldName, permission, bucketName)](#S3Wrapper+uploadMulterS3) ⇒ [<code>Promise.&lt;S3HelperResponse&gt;</code>](#S3HelperResponse)
+    * [.uploadObject(fileContent, fileName, permission, bucketName, contentType)](#S3Wrapper+uploadObject) ⇒ [<code>Promise.&lt;S3HelperResponse&gt;</code>](#S3HelperResponse)
+    * [.getObjects(bucketName, prefix)](#S3Wrapper+getObjects) ⇒ [<code>Promise.&lt;S3HelperResponse&gt;</code>](#S3HelperResponse)
+    * [.getObject(bucketName, objPath)](#S3Wrapper+getObject) ⇒ [<code>Promise.&lt;S3HelperResponse&gt;</code>](#S3HelperResponse)
+    * [.deleteObject(bucketName, objPath)](#S3Wrapper+deleteObject) ⇒ [<code>Promise.&lt;S3HelperResponse&gt;</code>](#S3HelperResponse)
+    * [.deleteObjects(bucketName, objects)](#S3Wrapper+deleteObjects) ⇒ [<code>Promise.&lt;S3HelperResponse&gt;</code>](#S3HelperResponse)
+    * [.getObjectMetadata(bucketName, key)](#S3Wrapper+getObjectMetadata) ⇒ [<code>Promise.&lt;S3HelperResponse&gt;</code>](#S3HelperResponse)
+
+<a name="S3Wrapper+getBuckets"></a>
+
+### s3Wrapper.getBuckets() ⇒ [<code>Promise.&lt;S3HelperResponse&gt;</code>](#S3HelperResponse)
+ListBuckets function promisified
+
+**Kind**: instance method of [<code>S3Wrapper</code>](#S3Wrapper)  
+<a name="S3Wrapper+addBucket"></a>
+
+### s3Wrapper.addBucket(bucketName, ACL) ⇒ [<code>Promise.&lt;S3HelperResponse&gt;</code>](#S3HelperResponse)
+Creates bucket in s3
+
+**Kind**: instance method of [<code>S3Wrapper</code>](#S3Wrapper)  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| bucketName | <code>String</code> |  | Uniq bucket name |
+| ACL | <code>String</code> | <code>public-read</code> | Optional - AWS bucket ACL optoins |
+
+<a name="S3Wrapper+deleteBucket"></a>
+
+### s3Wrapper.deleteBucket(bucketName) ⇒ [<code>Promise.&lt;S3HelperResponse&gt;</code>](#S3HelperResponse)
+Deletes provided bucket from S3
+
+**Kind**: instance method of [<code>S3Wrapper</code>](#S3Wrapper)  
+
+| Param | Type |
+| --- | --- |
+| bucketName | <code>String</code> | 
+
+<a name="S3Wrapper+uploadMulterS3"></a>
+
+### s3Wrapper.uploadMulterS3(req, res, fieldName, permission, bucketName) ⇒ [<code>Promise.&lt;S3HelperResponse&gt;</code>](#S3HelperResponse)
+Uploads multiplart files to s3 using multer package
+
+**Kind**: instance method of [<code>S3Wrapper</code>](#S3Wrapper)  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| req | <code>Object</code> |  | Can be express js request |
+| res | <code>Object</code> |  | Express response |
+| fieldName | <code>String</code> | <code>image</code> |  |
+| permission | <code>String</code> | <code>public-read</code> |  |
+| bucketName | <code>String</code> |  |  |
+
+<a name="S3Wrapper+uploadObject"></a>
+
+### s3Wrapper.uploadObject(fileContent, fileName, permission, bucketName, contentType) ⇒ [<code>Promise.&lt;S3HelperResponse&gt;</code>](#S3HelperResponse)
+Uploads fils/object to s3
+
+**Kind**: instance method of [<code>S3Wrapper</code>](#S3Wrapper)  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| fileContent | <code>File</code> \| <code>String</code> |  | This can be file, JSON string |
+| fileName | <code>String</code> |  |  |
+| permission | <code>String</code> | <code>public-read</code> |  |
+| bucketName | <code>String</code> |  |  |
+| contentType | <code>String</code> |  | s3 supported file content type |
+
+<a name="S3Wrapper+getObjects"></a>
+
+### s3Wrapper.getObjects(bucketName, prefix) ⇒ [<code>Promise.&lt;S3HelperResponse&gt;</code>](#S3HelperResponse)
+Gets s3 objects based on prefix if provided
+
+**Kind**: instance method of [<code>S3Wrapper</code>](#S3Wrapper)  
+
+| Param | Type |
+| --- | --- |
+| bucketName | <code>String</code> | 
+| prefix | <code>String</code> | 
+
+<a name="S3Wrapper+getObject"></a>
+
+### s3Wrapper.getObject(bucketName, objPath) ⇒ [<code>Promise.&lt;S3HelperResponse&gt;</code>](#S3HelperResponse)
+Get single object by key name
+
+**Kind**: instance method of [<code>S3Wrapper</code>](#S3Wrapper)  
+
+| Param | Type |
+| --- | --- |
+| bucketName | <code>String</code> | 
+| objPath | <code>String</code> | 
+
+<a name="S3Wrapper+deleteObject"></a>
+
+### s3Wrapper.deleteObject(bucketName, objPath) ⇒ [<code>Promise.&lt;S3HelperResponse&gt;</code>](#S3HelperResponse)
+Delete single object by key name
+
+**Kind**: instance method of [<code>S3Wrapper</code>](#S3Wrapper)  
+
+| Param | Type |
+| --- | --- |
+| bucketName | <code>String</code> | 
+| objPath | <code>String</code> | 
+
+<a name="S3Wrapper+deleteObjects"></a>
+
+### s3Wrapper.deleteObjects(bucketName, objects) ⇒ [<code>Promise.&lt;S3HelperResponse&gt;</code>](#S3HelperResponse)
+Deletes multiple objects from s3
+
+**Kind**: instance method of [<code>S3Wrapper</code>](#S3Wrapper)  
+
+| Param | Type |
+| --- | --- |
+| bucketName | <code>String</code> | 
+| objects | <code>Object</code> | 
+| objects.Key | <code>String</code> | 
+
+<a name="S3Wrapper+getObjectMetadata"></a>
+
+### s3Wrapper.getObjectMetadata(bucketName, key) ⇒ [<code>Promise.&lt;S3HelperResponse&gt;</code>](#S3HelperResponse)
+Gets Meta data for s3 object
+
+**Kind**: instance method of [<code>S3Wrapper</code>](#S3Wrapper)  
+
+| Param | Type |
+| --- | --- |
+| bucketName | <code>String</code> | 
+| key | <code>String</code> | 
+
 <a name="MailOptions"></a>
 
 ## MailOptions : <code>Object</code>
@@ -248,4 +394,20 @@ Get Email configuration request options
 | mailOption | <code>Object</code> |  |
 | mailOption.fromEmail | <code>String</code> | From email address concat with commas |
 | mailOption.toEmail | <code>String</code> | To email address concat with commas |
+
+<a name="S3HelperResponse"></a>
+
+## S3HelperResponse : <code>Object</code>
+S3 Wrapper Response
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| success | <code>Boolean</code> |  |
+| data | <code>Object</code> | Optional |
+| httpStatusCode | <code>Number</code> |  |
+| error | <code>Object</code> |  |
+| message | <code>String</code> |  |
 
