@@ -9,7 +9,7 @@ const fs = require('fs');
 const path = require('path');
 
 /* input and output paths */
-const inputFile = 'lib/*.js';
+const inputFile = 'src/*.js';
 const outputDir = `${__dirname}/docs`;
 
 const output = jsdoc2md.renderSync({ files: inputFile });
