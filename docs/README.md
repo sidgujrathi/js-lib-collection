@@ -29,6 +29,9 @@ storage functions</p>
 <dt><a href="#EmailNotification">EmailNotification</a></dt>
 <dd><p>This is helper/lib class to send email notifications</p>
 </dd>
+<dt><a href="#Logger">Logger</a></dt>
+<dd><p>Returns member function to log debug, error and info messages on console</p>
+</dd>
 <dt><a href="#S3Wrapper">S3Wrapper</a></dt>
 <dd><p>This is wrapper class to s3 API functions with
 promisification &amp; custom response handling</p>
@@ -258,6 +261,111 @@ Gets email server instance with provided options
 | Param | Type |
 | --- | --- |
 | mailConfig | [<code>MailConfig</code>](#MailConfig) | 
+
+<a name="Logger"></a>
+
+## Logger
+Returns member function to log debug, error and info messages on console
+
+**Kind**: global class  
+
+* [Logger](#Logger)
+    * [.setLevel(level)](#Logger+setLevel)
+    * [.trace(...statements)](#Logger+trace)
+    * [.debug(...statements)](#Logger+debug)
+    * [.info(...statements)](#Logger+info)
+    * [.warn(...statements)](#Logger+warn)
+    * [.error(...statements)](#Logger+error)
+    * [.fatal(...statements)](#Logger+fatal)
+    * [.json(jsObject)](#Logger+json)
+
+<a name="Logger+setLevel"></a>
+
+### logger.setLevel(level)
+Log level setter
+
+**Kind**: instance method of [<code>Logger</code>](#Logger)  
+
+| Param | Type |
+| --- | --- |
+| level | <code>String</code> | 
+
+<a name="Logger+trace"></a>
+
+### logger.trace(...statements)
+Prints traces the error provided in params
+
+**Kind**: instance method of [<code>Logger</code>](#Logger)  
+
+| Param | Type |
+| --- | --- |
+| ...statements | <code>any</code> | 
+
+<a name="Logger+debug"></a>
+
+### logger.debug(...statements)
+Prints debug logs
+
+**Kind**: instance method of [<code>Logger</code>](#Logger)  
+
+| Param | Type |
+| --- | --- |
+| ...statements | <code>any</code> | 
+
+<a name="Logger+info"></a>
+
+### logger.info(...statements)
+Prints information logs
+
+**Kind**: instance method of [<code>Logger</code>](#Logger)  
+
+| Param | Type |
+| --- | --- |
+| ...statements | <code>any</code> | 
+
+<a name="Logger+warn"></a>
+
+### logger.warn(...statements)
+Prints warning logs
+
+**Kind**: instance method of [<code>Logger</code>](#Logger)  
+
+| Param | Type |
+| --- | --- |
+| ...statements | <code>any</code> | 
+
+<a name="Logger+error"></a>
+
+### logger.error(...statements)
+Prints error logs
+
+**Kind**: instance method of [<code>Logger</code>](#Logger)  
+
+| Param | Type |
+| --- | --- |
+| ...statements | <code>any</code> | 
+
+<a name="Logger+fatal"></a>
+
+### logger.fatal(...statements)
+Prints fatal error logs
+
+**Kind**: instance method of [<code>Logger</code>](#Logger)  
+
+| Param | Type |
+| --- | --- |
+| ...statements | <code>any</code> | 
+
+<a name="Logger+json"></a>
+
+### logger.json(jsObject)
+Prints stringified form of JSON
+
+**Kind**: instance method of [<code>Logger</code>](#Logger)  
+
+| Param | Type |
+| --- | --- |
+| jsObject | <code>String</code> \| <code>JSON</code> | 
 
 <a name="S3Wrapper"></a>
 

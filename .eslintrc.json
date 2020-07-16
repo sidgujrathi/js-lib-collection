@@ -16,6 +16,7 @@
         "no-console": "off",
         "class-methods-use-this": "off",
         "import/no-unresolved": "off", //This is just because this is just collection
+        "no-underscore-dangle": "off",
         "max-len": [
             "error",
             {
