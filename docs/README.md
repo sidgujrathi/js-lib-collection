@@ -1,6 +1,9 @@
 ## Modules
 
 <dl>
+<dt><a href="#module_ApiCache.lib">ApiCache.lib</a></dt>
+<dd><p>APICache Library: A library helps to cache API response and return same from Redis</p>
+</dd>
 <dt><a href="#module_Auth.lib">Auth.lib</a></dt>
 <dd><p>Auth Library: Colletction of generic authentication and
 autorization functions</p>
@@ -30,7 +33,7 @@ storage functions</p>
 <dd><p>This is helper/lib class to send email notifications</p>
 </dd>
 <dt><a href="#Logger">Logger</a></dt>
-<dd><p>Returns member function to log debug, error and info messages on console</p>
+<dd><p>Returns member functions to log debug, error and info messages on console</p>
 </dd>
 <dt><a href="#S3Wrapper">S3Wrapper</a></dt>
 <dd><p>This is wrapper class to s3 API functions with
@@ -54,6 +57,11 @@ promisification &amp; custom response handling</p>
 <dd><p>S3 Wrapper Response</p>
 </dd>
 </dl>
+
+<a name="module_ApiCache.lib"></a>
+
+## ApiCache.lib
+APICache Library: A library helps to cache API response and return same from Redis
 
 <a name="module_Auth.lib"></a>
 
@@ -265,7 +273,7 @@ Gets email server instance with provided options
 <a name="Logger"></a>
 
 ## Logger
-Returns member function to log debug, error and info messages on console
+Returns member functions to log debug, error and info messages on console
 
 **Kind**: global class  
 
