@@ -18,6 +18,9 @@ storage functions</p>
 <dt><a href="#module_Map.lib">Map.lib</a></dt>
 <dd><p>Map Library: Colletction of generic map functions</p>
 </dd>
+<dt><a href="#module_Mongo.lib">Mongo.lib</a></dt>
+<dd><p>MongoDB Library: Collection methods related to mongodb connection</p>
+</dd>
 <dt><a href="#module_Redis.lib">Redis.lib</a></dt>
 <dd><p>Redis Library: Collection of methods related to redis</p>
 </dd>
@@ -53,6 +56,8 @@ promisification &amp; custom response handling</p>
 <dt><a href="#MailConfig">MailConfig</a> : <code>Object</code></dt>
 <dd><p>Get Email configuration request options</p>
 </dd>
+<dt><a href="#MongoInstances">MongoInstances</a> : <code>Object</code></dt>
+<dd></dd>
 <dt><a href="#S3HelperResponse">S3HelperResponse</a> : <code>Object</code></dt>
 <dd><p>S3 Wrapper Response</p>
 </dd>
@@ -183,6 +188,28 @@ Converts degree to Radian
 | --- | --- |
 | deg | <code>Number</code> | 
 
+<a name="module_Mongo.lib"></a>
+
+## Mongo.lib
+MongoDB Library: Collection methods related to mongodb connection
+
+
+* [Mongo.lib](#module_Mongo.lib)
+    * [~getMongoInstances()](#module_Mongo.lib..getMongoInstances) ⇒ <code>function</code>
+        * [~closureFunction()](#module_Mongo.lib..getMongoInstances..closureFunction) ⇒ [<code>MongoInstances</code>](#MongoInstances)
+
+<a name="module_Mongo.lib..getMongoInstances"></a>
+
+### Mongo.lib~getMongoInstances() ⇒ <code>function</code>
+Returns closure function which returns connection client and db
+
+**Kind**: inner method of [<code>Mongo.lib</code>](#module_Mongo.lib)  
+<a name="module_Mongo.lib..getMongoInstances..closureFunction"></a>
+
+#### getMongoInstances~closureFunction() ⇒ [<code>MongoInstances</code>](#MongoInstances)
+Establishes connection and return client and db
+
+**Kind**: inner method of [<code>getMongoInstances</code>](#module_Mongo.lib..getMongoInstances)  
 <a name="module_Redis.lib"></a>
 
 ## Redis.lib
@@ -559,6 +586,17 @@ Get Email configuration request options
 | mailOption | <code>Object</code> |  |
 | mailOption.fromEmail | <code>String</code> | From email address concat with commas |
 | mailOption.toEmail | <code>String</code> | To email address concat with commas |
+
+<a name="MongoInstances"></a>
+
+## MongoInstances : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| db | <code>Object</code> | 
+| client | <code>Object</code> | 
 
 <a name="S3HelperResponse"></a>
 
